@@ -1,10 +1,11 @@
 import fs from "fs/promises";
 import path from "path";
+import url from "url";
 
 main();
 
 async function main() {
-  const __dirname = import.meta.dirname;
+  const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
   const root = path.join(__dirname, "..");
   const input = path.join(__dirname, "./dictionary.csv");
   const output = path.join(root, "./src/__generated__/dictionary.json");

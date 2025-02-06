@@ -30,7 +30,8 @@ async function main() {
       };
     });
 
-  fs.writeFile(output, JSON.stringify(parsedEntries));
+  await fs.mkdir(path.dirname(output), { recursive: true });
+  await fs.writeFile(output, JSON.stringify(parsedEntries));
 
   console.log(`Generated dictionary json file to ${output}`);
 }

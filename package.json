@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "npm run init && vite",
+    "build": "npm run init && tsc && vite build",
+    "init": "node ./scripts/parse-dictionary.js",
     "preview": "vite preview"
   },
   "dependencies": {
